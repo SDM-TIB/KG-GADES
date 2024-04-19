@@ -1,0 +1,51 @@
+@prefix ex: <http://example.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+# Classes
+ex:Unit rdf:type owl:Class .
+ex:C1 rdf:type owl:Class.
+
+# Object Properties
+ex:P1 rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Unit ;
+    rdfs:range ex:C1 .
+
+# Datatype Properties
+ex:P3 rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Unit ;
+    rdfs:range xsd:string .
+ex:P4 rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Unit ;
+    rdfs:range xsd:float .
+
+# Entities
+ex:entity1 rdf:type ex:Unit ;
+           ex:P1 ex:objectA ;
+           ex:P3 "stringValue1";
+           ex:P4 1.1.
+
+ex:entity2 rdf:type ex:Unit ;
+           ex:P1 ex:objectA ;
+           ex:P3 "stringValue1";
+           ex:P4 1.1.
+
+
+
+ex:entity3 rdf:type ex:Unit ;
+           ex:P4 1.1.
+
+ex:entity4 rdf:type ex:Unit ;
+           ex:P3 "stringValue1".
+
+ex:entity5 rdf:type ex:Unit ;
+           ex:P1 ex:objectA .
+
+ex:entity6 rdf:type ex:Unit ;
+            ex:P1 ex:objectB ;
+            ex:P3 "stringValue2";
+            ex:P4 0.
+
+ex:objectA rdf:type ex:C1.
+ex:objectB rdf:type ex:C1.
